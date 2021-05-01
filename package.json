@@ -1,0 +1,55 @@
+{
+    "name": "vscode-open-in-fork",
+    "displayName": "Open in Fork",
+    "description": "Open project in Fork",
+    "repository": "aceslick911/vscode-open-in-fork",
+    "icon": "1024x1024.png",
+    "version": "0.1.0",
+    "publisher": "AngeloPerera",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+		"*"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "openInFork.open",
+                "title": "Open in Fork"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "openInFork.open"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "openInFork.open"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.0",
+        "eslint": "^7.25.0",
+        "mocha": "^3.5.0",
+        "typescript": "^2.5.2",
+        "vscode": "^1.1.5"
+    },
+    "dependencies": {
+        "find-root": "^1.1.0",
+        "opn": "^5.3.0"
+    }
+}
